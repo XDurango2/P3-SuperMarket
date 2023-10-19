@@ -11,7 +11,15 @@ package com.uabc.labs.p3;
 public class P3 {
 
     public static void main(String[] args) {
-        UI2 test = new UI2();
+        
+        UI2 test = new UI2();               
         test.setVisible(true);
+        
+       
+       /*relojSimulacion r1 = new relojSimulacion(10);
+       r1.iniciarSimulacion();
+      */
+        
+       }
     }
-}
+
