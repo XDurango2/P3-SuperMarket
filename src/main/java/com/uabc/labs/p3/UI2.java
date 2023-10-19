@@ -1350,6 +1350,7 @@ public class UI2 extends javax.swing.JFrame {
         showCajasNormales();
         showCajasRapidas();
         showQueueCR(s1.getCajasRapidas());
+        showQueueCN(s1.getCajasNormales());
         //simulacion s1 = new simulacion();
         
     }
@@ -1485,7 +1486,177 @@ public class UI2 extends javax.swing.JFrame {
     }
 }
   public void showQueueCN(ArrayList<caja> cajasNormales){
-      
+      Iterator<caja> cajasIterator = cajasNormales.iterator();
+       JLabel[] CN1 = {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5,CN1P6};
+       JLabel[] CN2 = {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5,CN2P6};
+       JLabel[] CN3 = {CN3P1,CN3P2,CN3P3,CN3P4,CN3P5,CN3P6};
+       JLabel[] CN4 = {CN4P1,CN4P2,CN4P3,CN4P4,CN4P5,CN4P6};
+       JLabel[] CN5 = {CN5P1,CN5P2,CN5P3,CN5P4,CN5P5,CN5P6};
+       JLabel[] CN6 = {CN6P1,CN6P2,CN6P3,CN6P4,CN6P5,CN6P6};
+       JLabel[] CN7 = {CN7P1,CN7P2,CN7P3,CN7P4,CN7P5,CN7P6};
+       JLabel[] CN8 = {CN8P1,CN8P2,CN8P3,CN8P4,CN8P5,CN8P6};
+       JLabel[] CN9 = {CN9P1,CN9P2,CN9P3,CN9P4,CN9P5,CN9P6};
+       JLabel[] CN10 = {CN10P1,CN10P2,CN10P3,CN10P4,CN10P5,CN10P6};
+       for (int k = 0; k < Math.max(CN1.length, CN10.length); k++) {
+        if (k < CN1.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c1 = colaIterator.next();
+                    CN1[k].setVisible(true);
+                    CN1[k].setText("" + c1.getCantidadArticulos());
+                } else {
+                    CN1[k].setVisible(false);
+                }
+            } else {
+                CN1[k].setVisible(false);
+            }
+        }
+        
+        if (k < CN2.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c2 = colaIterator.next();
+                    CN2[k].setVisible(true);
+                    CN2[k].setText("" + c2.getCantidadArticulos());
+                } else {
+                    CN2[k].setVisible(false);
+                }
+            } else {
+                CN2[k].setVisible(false);
+            }
+        }
+        
+        if (k < CN3.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN3[k].setVisible(true);
+                    CN3[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN3[k].setVisible(false);
+                }
+            } else {
+                CN3[k].setVisible(false);
+            }
+        }
+        if (k < CN4.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN4[k].setVisible(true);
+                    CN4[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN4[k].setVisible(false);
+                }
+            } else {
+                CN4[k].setVisible(false);
+            }
+        }
+        if (k < CN5.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN5[k].setVisible(true);
+                    CN5[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN5[k].setVisible(false);
+                }
+            } else {
+                CN5[k].setVisible(false);
+            }
+        }
+        if (k < CN6.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN6[k].setVisible(true);
+                    CN6[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN6[k].setVisible(false);
+                }
+            } else {
+                CN6[k].setVisible(false);
+            }
+        }
+        if (k < CN7.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN7[k].setVisible(true);
+                    CN7[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN3[k].setVisible(false);
+                }
+            } else {
+                CN7[k].setVisible(false);
+            }
+        }
+        if (k < CN7.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN7[k].setVisible(true);
+                    CN7[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN7[k].setVisible(false);
+                }
+            } else {
+                CN7[k].setVisible(false);
+            }
+        }
+        if (k < CN8.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN8[k].setVisible(true);
+                    CN8[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN8[k].setVisible(false);
+                }
+            } else {
+                CN8[k].setVisible(false);
+            }
+        }
+        if (k < CN9.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN9[k].setVisible(true);
+                    CN9[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN9[k].setVisible(false);
+                }
+            } else {
+                CN9[k].setVisible(false);
+            }
+        }
+        if (k < CN10.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CN10[k].setVisible(true);
+                    CN10[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CN10[k].setVisible(false);
+                }
+            } else {
+                CN10[k].setVisible(false);
+            }
+        }
+    }
+       
+           
   }
 
 
