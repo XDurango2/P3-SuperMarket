@@ -286,10 +286,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel19">
+    <Component class="javax.swing.JLabel" name="CR1P1">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel19.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel19.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR1P1.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -297,10 +297,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel20">
+    <Component class="javax.swing.JLabel" name="CR1P2">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel20.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR1P2.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -308,10 +308,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel21">
+    <Component class="javax.swing.JLabel" name="CR1P3">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel21.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR1P3.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -394,7 +394,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel32">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel19.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -404,7 +404,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel33">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -414,7 +414,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel34">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -422,10 +422,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel35">
+    <Component class="javax.swing.JLabel" name="CR2P1">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel35.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel35.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR2P1.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR2P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -433,10 +433,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel36">
+    <Component class="javax.swing.JLabel" name="CR2P2">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel36.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel36.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR2P2.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR2P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -444,10 +444,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel37">
+    <Component class="javax.swing.JLabel" name="CR2P3">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel37.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel37.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR2P3.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR2P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -457,7 +457,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel38">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel19.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -467,7 +467,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel39">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -477,7 +477,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel40">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -485,10 +485,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel41">
+    <Component class="javax.swing.JLabel" name="CR3P1">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel41.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel41.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR3P1.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR3P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -496,10 +496,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel42">
+    <Component class="javax.swing.JLabel" name="CR3P2">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel42.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel42.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR3P2.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR3P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -507,10 +507,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel43">
+    <Component class="javax.swing.JLabel" name="CR3P3">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel43.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel43.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR3P3.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR3P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -520,7 +520,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel44">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel19.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P1.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -530,7 +530,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel45">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -540,7 +540,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel46">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -548,10 +548,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel47">
+    <Component class="javax.swing.JLabel" name="CR1P4">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel47.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel47.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR1P4.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P4.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -559,10 +559,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel48">
+    <Component class="javax.swing.JLabel" name="CR1P5">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel48.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel48.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR1P5.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P5.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -572,7 +572,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel49">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -582,7 +582,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel50">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -590,10 +590,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel51">
+    <Component class="javax.swing.JLabel" name="CR3P4">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel51.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel51.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR3P4.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR3P4.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -601,10 +601,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel52">
+    <Component class="javax.swing.JLabel" name="CR3P5">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel52.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel52.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR3P5.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR3P5.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -614,7 +614,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel53">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -624,7 +624,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel54">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -632,10 +632,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel55">
+    <Component class="javax.swing.JLabel" name="CR2P4">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel55.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel55.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR2P4.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR2P4.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -643,10 +643,10 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel56">
+    <Component class="javax.swing.JLabel" name="CR2P5">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel56.setVisible(false);"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel56.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CR2P5.setVisible(false);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR2P5.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -656,7 +656,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel57">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel20.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P2.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -666,7 +666,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel58">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;jLabel21.setIcon(new javax.swing.ImageIcon(resized));"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="try{&#xa;            File input = new File(&quot;C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png&quot;);&#xa;            BufferedImage image = ImageIO.read(input);&#xa;            this.resized = resize(image,80,60);&#xa;        }catch (IOException e) {&#xa;            e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.&#xa;        }&#xa;CR1P3.setIcon(new javax.swing.ImageIcon(resized));"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

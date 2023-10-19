@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -67,9 +69,9 @@ public class UI2 extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         timeTextField = new javax.swing.JTextField();
         StartButton = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
+        CR1P1 = new javax.swing.JLabel();
+        CR1P2 = new javax.swing.JLabel();
+        CR1P3 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
@@ -80,28 +82,28 @@ public class UI2 extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
+        CR2P1 = new javax.swing.JLabel();
+        CR2P2 = new javax.swing.JLabel();
+        CR2P3 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
+        CR3P1 = new javax.swing.JLabel();
+        CR3P2 = new javax.swing.JLabel();
+        CR3P3 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
+        CR1P4 = new javax.swing.JLabel();
+        CR1P5 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
+        CR3P4 = new javax.swing.JLabel();
+        CR3P5 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
+        CR2P4 = new javax.swing.JLabel();
+        CR2P5 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
@@ -316,9 +318,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel19.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 100, 100));
-        jLabel19.setVisible(false);
+        CR1P1.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR1P1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 100, 100));
+        CR1P1.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -327,9 +329,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 100, 100));
-        jLabel20.setVisible(false);
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR1P2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 100, 100));
+        CR1P2.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -338,9 +340,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 100));
-        jLabel21.setVisible(false);
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR1P3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 100));
+        CR1P3.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -413,7 +415,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel19.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P1.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 100, 100));
 
         try{
@@ -423,7 +425,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 100, 100));
 
         try{
@@ -433,7 +435,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 100, 100));
 
         try{
@@ -443,9 +445,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel35.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 100, 100));
-        jLabel35.setVisible(false);
+        CR2P1.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR2P1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 100, 100));
+        CR2P1.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -454,9 +456,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel36.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 100));
-        jLabel36.setVisible(false);
+        CR2P2.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR2P2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 100));
+        CR2P2.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -465,9 +467,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel37.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 100, 100));
-        jLabel37.setVisible(false);
+        CR2P3.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR2P3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 100, 100));
+        CR2P3.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -476,7 +478,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel19.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P1.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 100, 100));
 
         try{
@@ -486,7 +488,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 100, 100));
 
         try{
@@ -496,7 +498,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 100, 100));
 
         try{
@@ -506,9 +508,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel41.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, 100));
-        jLabel41.setVisible(false);
+        CR3P1.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR3P1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, 100));
+        CR3P1.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -517,9 +519,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel42.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 100, 100));
-        jLabel42.setVisible(false);
+        CR3P2.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR3P2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 100, 100));
+        CR3P2.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -528,9 +530,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel43.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 100, 100));
-        jLabel43.setVisible(false);
+        CR3P3.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR3P3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 100, 100));
+        CR3P3.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -539,7 +541,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel19.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P1.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, 100));
 
         try{
@@ -549,7 +551,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 100, 100));
 
         try{
@@ -559,7 +561,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 100, 100));
 
         try{
@@ -569,9 +571,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel47.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 100, 100));
-        jLabel47.setVisible(false);
+        CR1P4.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR1P4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 100, 100));
+        CR1P4.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -580,9 +582,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel48.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 100, 100));
-        jLabel48.setVisible(false);
+        CR1P5.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR1P5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 100, 100));
+        CR1P5.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -591,7 +593,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 100, 100));
 
         try{
@@ -601,7 +603,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 100, 100));
 
         try{
@@ -611,9 +613,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel51.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 100, 100));
-        jLabel51.setVisible(false);
+        CR3P4.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR3P4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 100, 100));
+        CR3P4.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -622,9 +624,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel52.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 100, 100));
-        jLabel52.setVisible(false);
+        CR3P5.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR3P5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 100, 100));
+        CR3P5.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -633,7 +635,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 100, 100));
 
         try{
@@ -643,7 +645,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 100, 100));
 
         try{
@@ -653,9 +655,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel55.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 100, 100));
-        jLabel55.setVisible(false);
+        CR2P4.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR2P4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 100, 100));
+        CR2P4.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -664,9 +666,9 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel56.setIcon(new javax.swing.ImageIcon(resized));
-        getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 100, 100));
-        jLabel56.setVisible(false);
+        CR2P5.setIcon(new javax.swing.ImageIcon(resized));
+        getContentPane().add(CR2P5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 100, 100));
+        CR2P5.setVisible(false);
 
         try{
             File input = new File("C:\\Users\\us\\Documents\\NetBeansProjects\\Algoritmos\\P3\\src\\main\\java\\com\\uabc\\labs\\p3\\carts.png");
@@ -675,7 +677,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel20.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P2.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 100, 100));
 
         try{
@@ -685,7 +687,7 @@ public class UI2 extends javax.swing.JFrame {
         }catch (IOException e) {
             e.printStackTrace(); // Manejar el error apropiadamente, por ejemplo, mostrando un mensaje al usuario.
         }
-        jLabel21.setIcon(new javax.swing.ImageIcon(resized));
+        CR1P3.setIcon(new javax.swing.ImageIcon(resized));
         getContentPane().add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 100, 100));
 
         try{
@@ -856,7 +858,7 @@ public class UI2 extends javax.swing.JFrame {
     }//GEN-LAST:event_timeTextFieldActionPerformed
     public void ejecutarSimulacion(int tiempoSimulado) {
         Random rd = new Random();        
-        System.out.println("Han pasado " + tiempoSimulado + " minutos simulados.");
+        
         s1.addCliente(s1.createCliente(rd.nextInt(10+1),tiempoSimulado));
         System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
         System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
@@ -867,6 +869,7 @@ public class UI2 extends javax.swing.JFrame {
         s1.getCantidadClientes();
         showCajasNormales();
         showCajasRapidas();
+        showQueueCR(s1.getCajasRapidas());
         //simulacion s1 = new simulacion();
         
     }
@@ -948,7 +951,62 @@ public class UI2 extends javax.swing.JFrame {
     }
 
     
-   
+  public void showQueueCR(ArrayList<caja> cajasRapidas) {
+    Iterator<caja> cajasIterator = cajasRapidas.iterator();
+    JLabel[] CR1 = {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5};
+    JLabel[] CR2 = {CR2P1, CR2P2, CR2P3, CR2P4, CR2P5};
+    JLabel[] CR3 = {CR3P1,CR3P2,CR3P3,CR3P4,CR3P5};
+    
+    for (int k = 0; k < Math.max(CR1.length, CR2.length); k++) {
+        if (k < CR1.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c1 = colaIterator.next();
+                    CR1[k].setVisible(true);
+                    CR1[k].setText("" + c1.getCantidadArticulos());
+                } else {
+                    CR1[k].setVisible(false);
+                }
+            } else {
+                CR1[k].setVisible(false);
+            }
+        }
+        
+        if (k < CR2.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c2 = colaIterator.next();
+                    CR2[k].setVisible(true);
+                    CR2[k].setText("" + c2.getCantidadArticulos());
+                } else {
+                    CR2[k].setVisible(false);
+                }
+            } else {
+                CR2[k].setVisible(false);
+            }
+        }
+        
+        if (k < CR3.length) {
+            if (cajasIterator.hasNext()) {
+                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
+                if (colaIterator.hasNext()) {
+                    cliente c3 = colaIterator.next();
+                    CR3[k].setVisible(true);
+                    CR3[k].setText("" + c3.getCantidadArticulos());
+                } else {
+                    CR3[k].setVisible(false);
+                }
+            } else {
+                CR3[k].setVisible(false);
+            }
+        }
+    }
+}
+
+
+
     public void getResultsPopup(int CantidadClientes){
         resultsPopup dialog = new resultsPopup(new javax.swing.JFrame(), true, CantidadClientes);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -1010,16 +1068,28 @@ public class UI2 extends javax.swing.JFrame {
     private javax.swing.JLabel CN8;
     private javax.swing.JLabel CN9;
     private javax.swing.JLabel CR1;
+    private javax.swing.JLabel CR1P1;
+    private javax.swing.JLabel CR1P2;
+    private javax.swing.JLabel CR1P3;
+    private javax.swing.JLabel CR1P4;
+    private javax.swing.JLabel CR1P5;
     private javax.swing.JLabel CR2;
+    private javax.swing.JLabel CR2P1;
+    private javax.swing.JLabel CR2P2;
+    private javax.swing.JLabel CR2P3;
+    private javax.swing.JLabel CR2P4;
+    private javax.swing.JLabel CR2P5;
     private javax.swing.JLabel CR3;
+    private javax.swing.JLabel CR3P1;
+    private javax.swing.JLabel CR3P2;
+    private javax.swing.JLabel CR3P3;
+    private javax.swing.JLabel CR3P4;
+    private javax.swing.JLabel CR3P5;
     private javax.swing.JButton StartButton;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1030,28 +1100,16 @@ public class UI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;

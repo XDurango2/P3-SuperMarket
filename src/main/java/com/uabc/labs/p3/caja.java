@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.uabc.labs.p3;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 /**
@@ -43,6 +44,9 @@ public class caja {
         }
         
         
+    }
+    public Iterator<cliente> getColaIterator(){
+        return cola.iterator();
     }
     public int getColaSize(){
        
