@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Queue;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -1414,7 +1415,8 @@ public class UI2 extends javax.swing.JFrame {
                 
         }
     }
-        public void showCajasNormales(){
+    
+    public void showCajasNormales(){
             int cantidadCajasNormales = s1.cantidadCajasNormales();
 
         JLabel[] cajasRapidas = {CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9, CN10};
@@ -1433,60 +1435,45 @@ public class UI2 extends javax.swing.JFrame {
 
     
   public void showQueueCR(ArrayList<caja> cajasRapidas) {
-    Iterator<caja> cajasIterator = cajasRapidas.iterator();
+    ArrayList<caja> CR = s1.getCajasRapidas();
     JLabel[] CR1 = {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5};
     JLabel[] CR2 = {CR2P1, CR2P2, CR2P3, CR2P4, CR2P5};
     JLabel[] CR3 = {CR3P1,CR3P2,CR3P3,CR3P4,CR3P5};
-    
-    for (int k = 0; k < Math.max(CR1.length, CR2.length); k++) {
-        if (k < CR1.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c1 = colaIterator.next();
-                    CR1[k].setVisible(true);
-                    CR1[k].setText("" + c1.getCantidadArticulos());
-                } else {
-                    CR1[k].setVisible(false);
-                }
-            } else {
-                CR1[k].setVisible(false);
-            }
+    for(int k=0;k<CR.size();k++){
+        caja c1=CR.get(k);
+        Queue<cliente> c10 =  c1.cola;
+        JLabel[] currentLabels;
+        switch (k) {
+            case 0:
+                currentLabels = CR1;
+                break;
+            case 1:
+                currentLabels = CR2;
+                break;
+            case 2:
+                currentLabels = CR3;
+                break;
+            default:
+                // Manejar un caso no contemplado
+                continue;
+        }
+         for (int i = 0; i < currentLabels.length; i++) {
+             cliente clienteActual=c10.poll();
+             if(clienteActual!=null){
+                currentLabels[i].setText(""+clienteActual.getCantidadArticulos()); // Supongo que el nombre es lo que deseas mostrar
+                currentLabels[i].setVisible(true);
+
+             }
+             else{
+                 currentLabels[i].setVisible(false);
+             }
         }
         
-        if (k < CR2.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c2 = colaIterator.next();
-                    CR2[k].setVisible(true);
-                    CR2[k].setText("" + c2.getCantidadArticulos());
-                } else {
-                    CR2[k].setVisible(false);
-                }
-            } else {
-                CR2[k].setVisible(false);
-            }
-        }
-        
-        if (k < CR3.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CR3[k].setVisible(true);
-                    CR3[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CR3[k].setVisible(false);
-                }
-            } else {
-                CR3[k].setVisible(false);
-            }
-        }
     }
+   
 }
   public void showQueueCN(ArrayList<caja> cajasNormales){
-      Iterator<caja> cajasIterator = cajasNormales.iterator();
+       ArrayList<caja> CN = s1.getCajasNormales();
        JLabel[] CN1 = {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5,CN1P6};
        JLabel[] CN2 = {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5,CN2P6};
        JLabel[] CN3 = {CN3P1,CN3P2,CN3P3,CN3P4,CN3P5,CN3P6};
@@ -1497,166 +1484,60 @@ public class UI2 extends javax.swing.JFrame {
        JLabel[] CN8 = {CN8P1,CN8P2,CN8P3,CN8P4,CN8P5,CN8P6};
        JLabel[] CN9 = {CN9P1,CN9P2,CN9P3,CN9P4,CN9P5,CN9P6};
        JLabel[] CN10 = {CN10P1,CN10P2,CN10P3,CN10P4,CN10P5,CN10P6};
-       for (int k = 0; k < Math.max(CN1.length, CN10.length); k++) {
-        if (k < CN1.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c1 = colaIterator.next();
-                    CN1[k].setVisible(true);
-                    CN1[k].setText("" + c1.getCantidadArticulos());
-                } else {
-                    CN1[k].setVisible(false);
-                }
-            } else {
-                CN1[k].setVisible(false);
-            }
+       for(int k=0;k<CN.size();k++){
+        caja c1=CN.get(k);
+        Queue<cliente> c10 =  c1.cola;
+        JLabel[] currentLabels;
+        switch (k) {
+            case 0:
+                currentLabels = CN1;
+                break;
+            case 1:
+                currentLabels = CN2;
+                break;
+            case 2:
+                currentLabels = CN3;
+                break;
+            case 3:
+                currentLabels = CN4;
+                break;
+            case 4:
+                currentLabels = CN5;
+                break;
+            case 5:
+                currentLabels = CN6;
+                break;
+            case 6:
+                currentLabels = CN7;
+                break;
+            case 7 :
+                currentLabels = CN8;
+                break;
+            case 8:
+                currentLabels =CN9;
+                break;
+            case 9:
+                currentLabels = CN10;
+                break;
+            default:
+                // Manejar un caso no contemplado
+                continue;
+        }
+         for (int i = 0; i < currentLabels.length; i++) {
+             cliente clienteActual=c10.poll();
+             if(clienteActual!=null){
+                currentLabels[i].setText(""+clienteActual.getCantidadArticulos()); // Supongo que el nombre es lo que deseas mostrar
+                currentLabels[i].setVisible(true);
+
+             }
+             else{
+                 currentLabels[i].setVisible(false);
+             }
         }
         
-        if (k < CN2.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c2 = colaIterator.next();
-                    CN2[k].setVisible(true);
-                    CN2[k].setText("" + c2.getCantidadArticulos());
-                } else {
-                    CN2[k].setVisible(false);
-                }
-            } else {
-                CN2[k].setVisible(false);
-            }
-        }
-        
-        if (k < CN3.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN3[k].setVisible(true);
-                    CN3[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN3[k].setVisible(false);
-                }
-            } else {
-                CN3[k].setVisible(false);
-            }
-        }
-        if (k < CN4.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN4[k].setVisible(true);
-                    CN4[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN4[k].setVisible(false);
-                }
-            } else {
-                CN4[k].setVisible(false);
-            }
-        }
-        if (k < CN5.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN5[k].setVisible(true);
-                    CN5[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN5[k].setVisible(false);
-                }
-            } else {
-                CN5[k].setVisible(false);
-            }
-        }
-        if (k < CN6.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN6[k].setVisible(true);
-                    CN6[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN6[k].setVisible(false);
-                }
-            } else {
-                CN6[k].setVisible(false);
-            }
-        }
-        if (k < CN7.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN7[k].setVisible(true);
-                    CN7[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN3[k].setVisible(false);
-                }
-            } else {
-                CN7[k].setVisible(false);
-            }
-        }
-        if (k < CN7.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN7[k].setVisible(true);
-                    CN7[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN7[k].setVisible(false);
-                }
-            } else {
-                CN7[k].setVisible(false);
-            }
-        }
-        if (k < CN8.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN8[k].setVisible(true);
-                    CN8[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN8[k].setVisible(false);
-                }
-            } else {
-                CN8[k].setVisible(false);
-            }
-        }
-        if (k < CN9.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN9[k].setVisible(true);
-                    CN9[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN9[k].setVisible(false);
-                }
-            } else {
-                CN9[k].setVisible(false);
-            }
-        }
-        if (k < CN10.length) {
-            if (cajasIterator.hasNext()) {
-                Iterator<cliente> colaIterator = cajasIterator.next().getColaIterator();
-                if (colaIterator.hasNext()) {
-                    cliente c3 = colaIterator.next();
-                    CN10[k].setVisible(true);
-                    CN10[k].setText("" + c3.getCantidadArticulos());
-                } else {
-                    CN10[k].setVisible(false);
-                }
-            } else {
-                CN10[k].setVisible(false);
-            }
-        }
-    }
        
            
+  }
   }
 
 

@@ -46,10 +46,13 @@ public class simulacion {
     
     public ArrayList<cliente> createCliente(int cantidadClientes,int tiempoEntrada){
     Random rd = new Random();
+    int articulosrd ;
     ArrayList<cliente> clientes = new ArrayList<>();
     int tiempord;
     for(int k=0;k<cantidadClientes;k++){
-        int articulosrd = rd.nextInt(99+1);
+        do {
+            articulosrd = rd.nextInt(51); // Genera un número aleatorio entre 0 y 50
+        } while (articulosrd == 0);
         // La fórmula general es: rand.nextInt((max - min) + 1) + min
         if(articulosrd<3&&articulosrd>0){
             tiempord  =rd.nextInt((10-5)+1)+5;
