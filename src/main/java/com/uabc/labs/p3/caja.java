@@ -14,7 +14,7 @@ public class caja {
     boolean estaCerrado;
     boolean esCajaRapida;
     int cantidadClientesAtendidos=0; 
-    Queue<cliente> cola= new LinkedList<>();
+    Queue<cliente> cola;
     
     
      
@@ -27,26 +27,30 @@ public class caja {
     public caja(boolean estaCerrado, boolean esCajaRapida) {
         this.estaCerrado = estaCerrado;
         this.esCajaRapida = esCajaRapida;
-        
+        this.cola=new LinkedList<>();
     }
     public void agregarCliente(cliente c1){
          if(!estaCerrado){
-             cola.add(c1);
+              cola.add(c1);
          } 
         
     }
     public void atender(int tiempoSimulacion){
-        cliente c1 = cola.peek();
-        int tiempoTotal=c1.getCantidadTiempo()+c1.getTiempoEntrada();
-        if(tiempoSimulacion>tiempoTotal){
-            cola.remove();
-            cantidadClientesAtendidos++;
-        }
-        
+        if(!cola.isEmpty()){
+            cliente c1 = cola.peek();
+            int tiempoTotal=c1.getCantidadTiempo()+c1.getTiempoEntrada();
+            if(tiempoSimulacion>tiempoTotal){
+                System.out.println("cliente Atendido");
+                cola.remove();
+                cantidadClientesAtendidos++;
+            }
+        }else{
+            System.out.println("Error: cola vacia");
+        }  
         
     }
-    public Iterator<cliente> getColaIterator(){
-        return cola.iterator();
+    public cliente getCliente(){
+        return cola.poll();
     }
     public int getColaSize(){
        
@@ -73,9 +77,21 @@ public class caja {
         
     }
 
+    public String contenidosCaja(){
+        cliente[] cl={} ;
+        StringBuilder str= new StringBuilder();
+        cl=cola.toArray(cl);
+        
+        for(int k=0;k<cola.size();k++){
+            cliente c1 = cl[k];
+            str.append(c1+"\n");
+        }
+        return str.toString();
+    }  
+    
     @Override
     public String toString() {
-        return "caja{" + "estaCerrado=" + estaCerrado + ", esCajaRapida=" + esCajaRapida + ", cola=" + cola.size() + '}';
+        return "caja{" + "estaCerrado=" + estaCerrado + ", esCajaRapida=" + esCajaRapida + ", cola=" + cola+ '}';
     }
     
     

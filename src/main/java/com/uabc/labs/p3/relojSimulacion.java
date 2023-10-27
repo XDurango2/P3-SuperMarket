@@ -4,25 +4,37 @@
  */
 package com.uabc.labs.p3;
 import java.util.Random;
-
 /**
  *
  * @author us
  */
 public class relojSimulacion {
      private int tiempoSimulado=0; // Contador para el tiempo simulado (en horas)
-     private final int limite;
-     private volatile boolean simulacionActiva;
-     private simulacion s1;
+     private int limite;
+     private volatile boolean simulacionActiva=true;
      private int cantidadClientes=0;
-    public relojSimulacion(int limiteSimulacion) {
-        limite = limiteSimulacion; // Inicializamos el tiempo simulado a 0 horas
-        simulacionActiva =true;
-        s1 =new simulacion();
+     private simulacion s1= new simulacion();
+     private UI2 ui;
+     private Random rd;
+    
+    public relojSimulacion(int time) {
+        this.rd = new Random();        
+        this.ui = new UI2();
+        ui.setVisible(true);  
+        limite=time;
+        
     }
-
+    public void test(int time){
+        int test=0;
+         do{
+                //ejecutarSimulacion(s1,test++);
+                }while(test!=time);
+    }
+    
+   
     // Método para iniciar la simulación
-    public void iniciarSimulacion() {
+    public int iniciarSimulacion() {
+        
         Thread hiloSimulacion = new Thread(() -> {
             while (tiempoSimulado<limite&&simulacionActiva) {
                 try {
@@ -34,17 +46,27 @@ public class relojSimulacion {
                     
                     // Aquí puedes realizar cualquier acción que quieras que suceda cada minuto
                     // Por ejemplo, puedes llamar a un método que realice alguna tarea basada en el tiempo simulado.
-                   ejecutarSimulacion(tiempoSimulado);
-                    
-                    if(tiempoSimulado==limite){
-                        simulacionActiva=false;
-                        getResultsPopup(cantidadClientes);
-                    }
-                    if (tiempoSimulado % 5 == 0) {
-                    // Realizar la acción que deseas cada 5 minutos
-                    cerrarCajas();
+                   //ejecutarSimulacion(s1,tiempoSimulado);
+                   //ui.ejecutar(s1,tiempoSimulado);
+                    System.out.println("Han pasado " + tiempoSimulado + " minutos simulados.");
+                    s1.addCliente(s1.createCliente(rd.nextInt(10+1),tiempoSimulado));
+                    System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
+                    System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
+                    System.out.println("cajas Rapidas:"+s1.getCajasRapidasAbiertas());
+                    System.out.println("cantidad de cajas normales:"+s1.cantidadCajasNormales());
+                    System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
+                    s1.atenderCajas(tiempoSimulado);
+                    cantidadClientes=s1.getCantidadClientes();
+
+                if(tiempoSimulado==limite){
+                    simulacionActiva=false;
+                    resultsPopUp();
+
                 }
-                
+                if (tiempoSimulado % 10 == 0) {
+                // Realizar la acción que deseas cada 5 minutos
+                s1.cerrarCajas(tiempoSimulado);                     }
+
                    
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -53,6 +75,7 @@ public class relojSimulacion {
         });
 
         hiloSimulacion.start(); // Inicia el hilo
+        return tiempoSimulado;
     }
 
     // Método para obtener el tiempo simulado actual
@@ -82,16 +105,24 @@ public class relojSimulacion {
         System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
         s1.atenderCajas(tiempoSimulado);
         cantidadClientes=s1.getCantidadClientes();
-        //simulacion s1 = new simulacion();
+                
         
     }
     public void cerrarCajas(){
-        s1.cerrarCajas();
+        s1.cerrarCajas(tiempoSimulado);
     }
-    public int getCajasNormalesCantidad(){
-        return s1.cantidadCajasNormales();
-    }
-    public int getCajasRapidasCantidad(){
-        return s1.cantidadCajasRapidas();
-    }
+    public void getResultsPopup(int CantidadClientes, String CR,String CN){
+       resultsPopup dialog = new resultsPopup(new javax.swing.JFrame(), true, CantidadClientes);
+               dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                   @Override
+                   public void windowClosing(java.awt.event.WindowEvent e) {
+                       System.exit(0);
+                   }
+               });
+               dialog.setCajaMasUsada(s1.getCajaMasUsadas());
+               dialog.setVisible(true);
+   }
+}
+    
+    
     

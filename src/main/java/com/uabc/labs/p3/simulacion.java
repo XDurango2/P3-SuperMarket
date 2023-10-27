@@ -4,16 +4,18 @@
  */
 package com.uabc.labs.p3;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Random;
+import javax.swing.JOptionPane;
 /**
  *
  * @author us
  */
-public class simulacion {
+public final class simulacion {
 
     
-    private ArrayList<caja> cajasNormales;
-    private ArrayList<caja> cajasRapidas;
+    private final ArrayList<caja> cajasNormales;
+    private final ArrayList<caja> cajasRapidas;
     private int cajasNormalesAbiertas=0;
     private int cajasRapidasAbiertas=0;
     private int cantidadClientes=0;
@@ -21,8 +23,8 @@ public class simulacion {
     
 
     public simulacion( ) {
-      this.cajasRapidas = new ArrayList<>();
-      this.cajasNormales = new ArrayList<>();
+     this.cajasNormales=new ArrayList<>();
+     this.cajasRapidas=new ArrayList<>();
         crearCajasNormales();
         crearCajasRapidas();
         
@@ -46,18 +48,18 @@ public class simulacion {
     
     public ArrayList<cliente> createCliente(int cantidadClientes,int tiempoEntrada){
     Random rd = new Random();
-    int articulosrd ;
+    int articulosrd;
     ArrayList<cliente> clientes = new ArrayList<>();
     int tiempord;
     for(int k=0;k<cantidadClientes;k++){
         do {
-            articulosrd = rd.nextInt(51); // Genera un número aleatorio entre 0 y 50
+            articulosrd = rd.nextInt(20); // Genera un número aleatorio entre 0 y 50
         } while (articulosrd == 0);
         // La fórmula general es: rand.nextInt((max - min) + 1) + min
         if(articulosrd<3&&articulosrd>0){
-            tiempord  =rd.nextInt((10-5)+1)+5;
+            tiempord  =rd.nextInt((10-5)+1)+5; //tiempo de espera entre 5 a 10 min
         }else{
-            tiempord  =rd.nextInt((15-10)+1)+10;
+            tiempord  =rd.nextInt((15-10)+1)+10; //tiempo de espera entre 10 a 15 min
         }
 
 
@@ -66,29 +68,30 @@ public class simulacion {
     }
     return clientes;
     }
-    public void addCliente(ArrayList<cliente> clientesCreados){
-        for(int k=0;k<clientesCreados.size();k++){
-        cliente c1  =clientesCreados.remove(k);
-        caja cajaMenosClientes=cajasNormales.get(0);
-        if(c1.getCantidadArticulos()>10){
+    
+    public void addCliente(ArrayList<cliente> clientesCreados) {
+    for (cliente c1 : clientesCreados) {
+        // Aquí, 'c1' representa un objeto de tipo 'cliente' en cada iteración
+        caja cajaMenosClientes = cajasNormales.get(0);
+
+        if (c1.getCantidadArticulos() > 10) {
             for (caja caja : cajasNormales) {
-                if (caja.getColaSize() < cajaMenosClientes.getColaSize()&&caja.isEstaCerrado()==false) {
+                if (caja.getColaSize() < cajaMenosClientes.getColaSize() && !caja.isEstaCerrado()) {
                     cajaMenosClientes = caja;
                 }
-        }
-        }else{
+            }
+        } else {
             for (caja caja : cajasRapidas) {
-                if (caja.getColaSize() < cajaMenosClientes.getColaSize()&&caja.isEstaCerrado()==false) {
+                if (caja.getColaSize() < cajaMenosClientes.getColaSize() && !caja.isEstaCerrado()) {
                     cajaMenosClientes = caja;
                 }
-        }
+            }
         }
         cantidadClientes++;
-         cajaMenosClientes.agregarCliente(c1);
-         
-        }   
-         
+        cajaMenosClientes.agregarCliente(c1);
     }
+}
+
 
     public ArrayList<caja> getCajasNormales() {
        
@@ -109,7 +112,37 @@ public class simulacion {
         
         return str.toString();
     }
-
+    
+    public void moverClientes(){
+        int[] cajasMasUsadas=getCajaMasUsadas();
+        caja cajaNormalesMenosClientes=cajasNormales.get(0);
+        caja cajaRapidasMenosClientes=cajasRapidas.get(0);
+        
+        for(caja caja: cajasNormales){
+            if(caja.getColaSize()<cajaNormalesMenosClientes.getColaSize()){
+                cajaNormalesMenosClientes=caja;
+            }
+        }
+           // Verificar si hay clientes en la caja menos ocupada
+        if (cajaNormalesMenosClientes.getColaSize() > 0) {
+            // Mover un cliente de la caja con más clientes a la menos ocupada
+            cliente clienteMovido = cajaNormalesMenosClientes.getCliente(); // Implementa este método según tu lógica
+            cajasNormales.get(cajasMasUsadas[0]).agregarCliente(clienteMovido); // Implementa este método según tu lógica
+        }
+        
+        for(caja caja: cajasRapidas){
+            if(caja.getColaSize()<cajaRapidasMenosClientes.getColaSize()){
+                cajaRapidasMenosClientes=caja;
+            }
+        }
+        if (cajaRapidasMenosClientes.getColaSize() > 0) {
+            // Mover un cliente de la caja con más clientes a la menos ocupada
+            cliente clienteMovido = cajaRapidasMenosClientes.getCliente(); // Implementa este método según tu lógica
+            cajasRapidas.get(cajasMasUsadas[1]).agregarCliente(clienteMovido); // Implementa este método según tu lógica
+        }
+     
+    }
+    
     public int getCantidadClientes() {
         return cantidadClientes;
     }
@@ -124,93 +157,94 @@ public class simulacion {
         
         return str.toString();
     }
-    public void getCajasAbiertas(){
-        for (caja caja : cajasNormales) {
-                if (!caja.isEstaCerrado()) {
-                   cajasNormalesAbiertas++;
-                }
-        }
-        
-            for (caja caja : cajasRapidas) {
-                if (!caja.isEstaCerrado()) {
-                    cajasRapidasAbiertas++;
-                }
-        }
-            
-        }
+    
     public void abrirCajas(){
-        getCajasAbiertas();
-        boolean cajasLlenas=false;       
+        
+        boolean cajasRapidasLlenas=false;
+        boolean cajasNormalesLlenas=false;       
             for (caja caja : cajasNormales) {
                 if (!caja.isEstaCerrado()&& caja.getColaSize()>5) {
-                    cajasLlenas = true;
+                    cajasNormalesLlenas = true;
                 }
         }
         
             for (caja caja : cajasRapidas) {
                 if (!caja.isEstaCerrado()&& caja.getColaSize()>5) {
-                    cajasLlenas = true;
+                    cajasRapidasLlenas = true;
                 }
         }
-        if(cajasLlenas&&cajasNormalesAbiertas<10){
+        if(cajasNormalesLlenas&&cajasNormales.size()<10){
             crearCajasNormales();
-        }else{
-            for(caja caja: cajasNormales){
-                if(caja.isEstaCerrado()==true){
-                    caja.abrirCaja();
-                    break;
-                }
-            }
         }
-        if(cajasLlenas&&cajasRapidasAbiertas<3){
+        if(cajasRapidasLlenas&&cajasRapidas.size()<3){
             crearCajasRapidas();
-        }else{
-             for(caja caja: cajasRapidas){
-                if(caja.isEstaCerrado()==true){
-                    caja.abrirCaja();
-                    break;
-                }
-            }
         }    
         
     }
-    public void cerrarCajas(){
+    
+    public void cerrarCajas(int tiempoSimulado){
     boolean primeraCajaNormal = true;
     boolean primeraCajaRapida = true;
     
-    for (caja caja : cajasNormales) {
+    // Cierra cajas normales
+    Iterator<caja> iterator = cajasNormales.iterator();
+    while (iterator.hasNext()) {
+        caja caja = iterator.next();
         if (!caja.isEstaCerrado() && primeraCajaNormal) {
             primeraCajaNormal = false;
         } else {
+            cajasNormalesAbiertas--;
             caja.cerrarCaja();
-            caja=null;
+            
+            if(caja.cola.isEmpty()){
+                iterator.remove(); // Usa el iterador para eliminar de manera segura
+                
+            }else{
+              do{
+                  caja.atender(tiempoSimulado);
+              }while(caja.cola.isEmpty());
+            }
             
         }
     }
     
-    for (caja caja : cajasRapidas) {
+    // Cierra cajas rápidas
+    iterator = cajasRapidas.iterator();
+    while (iterator.hasNext()) {
+        caja caja = iterator.next();
         if (!caja.isEstaCerrado() && primeraCajaRapida) {
             primeraCajaRapida = false;
         } else {
             caja.cerrarCaja();
-            caja=null;
-        }
+            cajasRapidasAbiertas--;
+            if(caja.cola.isEmpty()){
+            iterator.remove(); // Usa el iterador para eliminar de manera segura
+            
+            }else{
+                do{
+                  caja.atender(tiempoSimulado);
+              }while(caja.cola.isEmpty());
+            }
+            }
     }
+    
 }
+
     public void atenderCajas(int tiempoSimulacion){
          for (caja caja : cajasNormales) {
-                if (!caja.isEstaCerrado()&&!caja.cola.isEmpty()) {
+                if (!caja.cola.isEmpty()) {
                    caja.atender(tiempoSimulacion);
                 }
         }
         
             for (caja caja : cajasRapidas) {
-                if (!caja.isEstaCerrado()&&!caja.cola.isEmpty()) {
+                if (!caja.cola.isEmpty()) {
                     caja.atender(tiempoSimulacion);
                 }
         }
             abrirCajas();
         }
+   
     public int[] getCajaMasUsadas(){
         caja cajaMasUsada=cajasNormales.get(0);
         caja cajaMasUsadaRapidas=cajasRapidas.get(0);
@@ -220,17 +254,17 @@ public class simulacion {
         numeros = new int[5];
         for(int k=0; k<cajasNormales.size();k++){
             caja caja=cajasNormales.get(k);
-            if(caja.cantidadClientesAtendidos>cajaMasUsada.cantidadClientesAtendidos){
+            if(caja.cantidadClientesAtendidos<cajaMasUsada.cantidadClientesAtendidos){
                 cajaMasUsada=caja;
-                numeroCajas=cajasNormales.indexOf(caja);
+                numeroCajas=cajasNormales.indexOf(caja)+1;
             }else{
-                numeroCajas=cajasNormales.indexOf(caja);
+                numeroCajas=cajasNormales.indexOf(caja)+1;
             }
             numeros[0] = numeroCajas;
         }
         for(int k=0;k<cajasRapidas.size();k++){
             caja caja=cajasRapidas.get(k);
-            if(caja.cantidadClientesAtendidos>cajaMasUsadaRapidas.cantidadClientesAtendidos){
+            if(caja.cantidadClientesAtendidos<cajaMasUsadaRapidas.cantidadClientesAtendidos){
                 cajaMasUsadaRapidas=caja;
                 numeroCajasRapidas=cajasRapidas.indexOf(caja)+1;
             }else{
@@ -242,6 +276,7 @@ public class simulacion {
         
             return numeros;
         }
+    
 
          
     }

@@ -12,32 +12,40 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Queue;
 import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 /**
  *
  * @author us
  */
 public class UI2 extends javax.swing.JFrame {
-    
+    private int contador=0;
     private int time;
     private BufferedImage resized;
     private Timer timer;
-    private final simulacion s1;
-    private int contador;
+    private simulacion s1;
+    //private int contador;
+    public boolean hasStarted=false;
+     private Random rd;
+     private int cantidadClientes;
 
     /**
      * Creates new form UI2
+     * @param s1
      */
     public UI2() {
         initComponents();
-        this.contador=0;
+        //this.contador=0;
+        this.rd=new Random();
         this.s1=new simulacion();
+    }
+    public void setS1(simulacion s1){
+        this.s1=s1;
     }
 
     /**
@@ -167,6 +175,7 @@ public class UI2 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 600));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         try{
@@ -1338,9 +1347,10 @@ public class UI2 extends javax.swing.JFrame {
         this.time = Integer.parseInt(timeString);
     }//GEN-LAST:event_timeTextFieldActionPerformed
     public void ejecutarSimulacion(int tiempoSimulado) {
+        int tiemposimulado = tiempoSimulado;
         Random rd = new Random();        
-        
-        s1.addCliente(s1.createCliente(rd.nextInt(10+1),tiempoSimulado));
+        System.out.println("tiempo simulado:"+tiempoSimulado);
+        s1.addCliente(s1.createCliente(rd.nextInt(5+1),tiemposimulado));
         System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
         System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
         System.out.println("cajas Rapidas:"+s1.getCajasRapidasAbiertas());
@@ -1348,32 +1358,71 @@ public class UI2 extends javax.swing.JFrame {
         System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
         s1.atenderCajas(tiempoSimulado);
         s1.getCantidadClientes();
+        if(tiemposimulado%10==0){
+                    s1.cerrarCajas(tiempoSimulado);
+                    
+        }
         showCajasNormales();
         showCajasRapidas();
         showQueueCR(s1.getCajasRapidas());
         showQueueCN(s1.getCajasNormales());
-        //simulacion s1 = new simulacion();
+        
         
     }
+    
+    public void ejecutar(simulacion s1,int contador){
+        Clock(contador);
+        setS1(s1);
+        showCajasNormales();
+        showCajasRapidas();
+        showQueueCR(s1.getCajasRapidas());
+        showQueueCN(s1.getCajasNormales());
+    }
+
+    public boolean isHasStarted() {
+        return hasStarted;
+    }
+    
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
         
-        clockMain();
-         
+    clockMain();         
     }//GEN-LAST:event_StartButtonActionPerformed
-    
+    public int getTime(){
+        return time;
+    }
     public void clockMain(){
+        
         timer = new Timer(3000, new ActionListener() {
             
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 contador++;
-                Clock();
-                ejecutarSimulacion(contador);
+                Clock(contador);
+                //ejecutarSimulacion(contador);
+                System.out.println("Han pasado " + contador + " minutos simulados.");
+                s1.addCliente(s1.createCliente(rd.nextInt(5+1),contador));
+                System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
+                System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
+                System.out.println("cajas Rapidas:"+s1.getCajasRapidasAbiertas());
+                System.out.println("cantidad de cajas normales:"+s1.cantidadCajasNormales());
+                System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
+                s1.atenderCajas(contador);
+                cantidadClientes=s1.getCantidadClientes();
+                showCajasNormales();
+                showCajasRapidas();
+                showQueueCR(s1.getCajasRapidas());
+                showQueueCN(s1.getCajasNormales());
                 
+                   
+                    if (contador % 10 == 0) {
+                    // Realizar la acción que deseas cada 5 minutos
+                    s1.cerrarCajas(contador);    
+                    }
+                    
                 if(contador==time){
                     timer.stop();
-                    getResultsPopup(s1.getCantidadClientes());
+                    resultsPopUp(s1.getCantidadClientes(),s1.getCajaMasUsadas());
                     
                     
                 }
@@ -1381,7 +1430,10 @@ public class UI2 extends javax.swing.JFrame {
         });
         timer.start();
     }
-    public void Clock(){
+    public int getContador(){
+        return contador;
+    }
+    public void Clock(int contador){
          int horas = (contador / 60) % 12;
         if (horas == 0) horas = 12;
         int minutos = contador % 60;
@@ -1433,8 +1485,23 @@ public class UI2 extends javax.swing.JFrame {
         }
     }
 
+   public void hideCRLabels() {
+    JLabel[][] CRLabels = {
+        {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5},
+        {CR2P1, CR2P2, CR2P3, CR2P4, CR2P5},
+        {CR3P1, CR3P2, CR3P3, CR3P4, CR3P5}
+    };
+
+    for (int fila = 0; fila < CRLabels.length; fila++) {
+        for (int columna = 0; columna < CRLabels[fila].length; columna++) {
+            CRLabels[fila][columna].setVisible(false);
+        }
+    }
+}
+
     
   public void showQueueCR(ArrayList<caja> cajasRapidas) {
+    hideCRLabels();
     ArrayList<caja> CR = s1.getCajasRapidas();
     JLabel[] CR1 = {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5};
     JLabel[] CR2 = {CR2P1, CR2P2, CR2P3, CR2P4, CR2P5};
@@ -1457,23 +1524,48 @@ public class UI2 extends javax.swing.JFrame {
                 // Manejar un caso no contemplado
                 continue;
         }
-         for (int i = 0; i < currentLabels.length; i++) {
-             cliente clienteActual=c10.poll();
-             if(clienteActual!=null){
-                currentLabels[i].setText(""+clienteActual.getCantidadArticulos()); // Supongo que el nombre es lo que deseas mostrar
-                currentLabels[i].setVisible(true);
+        int i = 0; // Inicializamos un contador para rastrear la posición del cliente
 
-             }
-             else{
-                 currentLabels[i].setVisible(false);
-             }
+        for (cliente clienteActual : c10) {
+            if(i>= currentLabels.length){
+                break;
+            }
+            if (clienteActual != null) {
+                currentLabels[i].setText("" + clienteActual.getCantidadArticulos());
+                currentLabels[i].setVisible(true);
+            } else {
+                currentLabels[i].setVisible(false);
+            }
+            i++; // Incrementamos el contador después de cada cliente
         }
         
     }
    
 }
+  public void hideAllLabelsCN() {
+    JLabel[][] CNLabels = {
+        {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5, CN1P6},
+        {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5, CN2P6},
+        {CN3P1, CN3P2, CN3P3, CN3P4, CN3P5, CN3P6},
+        {CN4P1, CN4P2, CN4P3, CN4P4, CN4P5, CN4P6},
+        {CN5P1, CN5P2, CN5P3, CN5P4, CN5P5, CN5P6},
+        {CN6P1, CN6P2, CN6P3, CN6P4, CN6P5, CN6P6},
+        {CN7P1, CN7P2, CN7P3, CN7P4, CN7P5, CN7P6},
+        {CN8P1, CN8P2, CN8P3, CN8P4, CN8P5, CN8P6},
+        {CN9P1, CN9P2, CN9P3, CN9P4, CN9P5, CN9P6},
+        {CN10P1, CN10P2, CN10P3, CN10P4, CN10P5, CN10P6}
+    };
+
+    for (int fila = 0; fila < CNLabels.length; fila++) {
+        for (int columna = 0; columna < CNLabels[fila].length; columna++) {
+            CNLabels[fila][columna].setVisible(false);
+        }
+    }
+}
+
   public void showQueueCN(ArrayList<caja> cajasNormales){
        ArrayList<caja> CN = s1.getCajasNormales();
+       hideAllLabelsCN();
        JLabel[] CN1 = {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5,CN1P6};
        JLabel[] CN2 = {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5,CN2P6};
        JLabel[] CN3 = {CN3P1,CN3P2,CN3P3,CN3P4,CN3P5,CN3P6};
@@ -1489,107 +1581,59 @@ public class UI2 extends javax.swing.JFrame {
         Queue<cliente> c10 =  c1.cola;
         JLabel[] currentLabels;
         switch (k) {
-            case 0:
-                currentLabels = CN1;
-                break;
-            case 1:
-                currentLabels = CN2;
-                break;
-            case 2:
-                currentLabels = CN3;
-                break;
-            case 3:
-                currentLabels = CN4;
-                break;
-            case 4:
-                currentLabels = CN5;
-                break;
-            case 5:
-                currentLabels = CN6;
-                break;
-            case 6:
-                currentLabels = CN7;
-                break;
-            case 7 :
-                currentLabels = CN8;
-                break;
-            case 8:
-                currentLabels =CN9;
-                break;
-            case 9:
-                currentLabels = CN10;
-                break;
-            default:
+            case 0 -> currentLabels = CN1;
+            case 1 -> currentLabels = CN2;
+            case 2 -> currentLabels = CN3;
+            case 3 -> currentLabels = CN4;
+            case 4 -> currentLabels = CN5;
+            case 5 -> currentLabels = CN6;
+            case 6 -> currentLabels = CN7;
+            case 7 -> currentLabels = CN8;
+            case 8 -> currentLabels =CN9;
+            case 9 -> currentLabels = CN10;
+            default -> {
                 // Manejar un caso no contemplado
                 continue;
+               }
         }
-         for (int i = 0; i < currentLabels.length; i++) {
-             cliente clienteActual=c10.poll();
-             if(clienteActual!=null){
-                currentLabels[i].setText(""+clienteActual.getCantidadArticulos()); // Supongo que el nombre es lo que deseas mostrar
+        
+        int i=0;
+           for (cliente clienteActual : c10) {
+            if(i>= currentLabels.length){
+                break;
+            }
+            if (clienteActual != null) {
+                currentLabels[i].setText("" + clienteActual.getCantidadArticulos());
                 currentLabels[i].setVisible(true);
-
-             }
-             else{
-                 currentLabels[i].setVisible(false);
-             }
+            } else {
+                currentLabels[i].setVisible(false);
+            }
+            i++; // Incrementamos el contador después de cada cliente
         }
         
        
            
   }
   }
-
-
-
-    public void getResultsPopup(int CantidadClientes){
-        resultsPopup dialog = new resultsPopup(new javax.swing.JFrame(), true, CantidadClientes);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setCajaMasUsada(s1.getCajaMasUsadas());
-                dialog.setVisible(true);
+  public void resultsPopUp(int CantidadClientes, int[] numeros){
+        StringBuilder str = new StringBuilder();
+        str.append("cantidad de clientes atendidos:"+cantidadClientes);
+        str.append("\n");
+        str.append("Caja normal mas usada:"+numeros[0]);
+        str.append("\n");
+        str.append("caja rapida mas usada"+numeros[1]);
+        JOptionPane.showMessageDialog(null,str);
     }
+
+
+    
     
 
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UI2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UI2().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CN1;

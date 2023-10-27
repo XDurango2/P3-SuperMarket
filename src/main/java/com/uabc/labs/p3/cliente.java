@@ -19,6 +19,11 @@ public class cliente {
         this.tiempoEntrada=tiempoEntrada;
     }
 
+    @Override
+    public String toString() {
+        return "cliente{" + "cantidadArticulos=" + cantidadArticulos + ", cantidadTiempo=" + cantidadTiempo + ", tiempoEntrada=" + tiempoEntrada + '}';
+    }
+
     public int getTiempoEntrada() {
         return tiempoEntrada;
     }
