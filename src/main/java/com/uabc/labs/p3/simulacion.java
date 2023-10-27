@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Random;
 /**
  *
- * @author us
+ * @author Hector Duran
  */
 public final class simulacion {
 
