@@ -6,7 +6,6 @@ package com.uabc.labs.p3;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
-import javax.swing.JOptionPane;
 /**
  *
  * @author us
@@ -103,7 +102,7 @@ public final class simulacion {
     }
 
     public String getCajasNormalesAbiertas() {
-         StringBuffer str = new StringBuffer();
+         StringBuilder str = new StringBuilder();
         for(int k=0;k<cajasNormales.size();k++){
            if(!cajasNormales.get(k).isEstaCerrado()){
                str.append(cajasNormales.get(k).toString());
@@ -113,42 +112,14 @@ public final class simulacion {
         return str.toString();
     }
     
-    public void moverClientes(){
-        int[] cajasMasUsadas=getCajaMasUsadas();
-        caja cajaNormalesMenosClientes=cajasNormales.get(0);
-        caja cajaRapidasMenosClientes=cajasRapidas.get(0);
-        
-        for(caja caja: cajasNormales){
-            if(caja.getColaSize()<cajaNormalesMenosClientes.getColaSize()){
-                cajaNormalesMenosClientes=caja;
-            }
-        }
-           // Verificar si hay clientes en la caja menos ocupada
-        if (cajaNormalesMenosClientes.getColaSize() > 0) {
-            // Mover un cliente de la caja con más clientes a la menos ocupada
-            cliente clienteMovido = cajaNormalesMenosClientes.getCliente(); // Implementa este método según tu lógica
-            cajasNormales.get(cajasMasUsadas[0]).agregarCliente(clienteMovido); // Implementa este método según tu lógica
-        }
-        
-        for(caja caja: cajasRapidas){
-            if(caja.getColaSize()<cajaRapidasMenosClientes.getColaSize()){
-                cajaRapidasMenosClientes=caja;
-            }
-        }
-        if (cajaRapidasMenosClientes.getColaSize() > 0) {
-            // Mover un cliente de la caja con más clientes a la menos ocupada
-            cliente clienteMovido = cajaRapidasMenosClientes.getCliente(); // Implementa este método según tu lógica
-            cajasRapidas.get(cajasMasUsadas[1]).agregarCliente(clienteMovido); // Implementa este método según tu lógica
-        }
-     
-    }
+   
     
     public int getCantidadClientes() {
         return cantidadClientes;
     }
 
     public String getCajasRapidasAbiertas() {
-         StringBuffer str = new StringBuffer();
+         StringBuilder str = new StringBuilder();
         for(int k=0;k<cajasRapidas.size();k++){
            if(!cajasRapidas.get(k).isEstaCerrado()){
                str.append(cajasRapidas.get(k).toString());
@@ -254,7 +225,7 @@ public final class simulacion {
         numeros = new int[5];
         for(int k=0; k<cajasNormales.size();k++){
             caja caja=cajasNormales.get(k);
-            if(caja.getCantidadClientesAtendidos()<cajaMasUsada.getCantidadClientesAtendidos()){
+            if(caja.getCantidadClientesAtendidos()>cajaMasUsada.getCantidadClientesAtendidos()){
                 cajaMasUsada=caja;
                 numeroCajas=cajasNormales.indexOf(caja)+1;
             }else{
@@ -264,7 +235,7 @@ public final class simulacion {
         }
         for(int k=0;k<cajasRapidas.size();k++){
             caja caja=cajasRapidas.get(k);
-            if(caja.getCantidadClientesAtendidos()<cajaMasUsadaRapidas.getCantidadClientesAtendidos()){
+            if(caja.getCantidadClientesAtendidos()>cajaMasUsadaRapidas.getCantidadClientesAtendidos()){
                 cajaMasUsadaRapidas=caja;
                 numeroCajasRapidas=cajasRapidas.indexOf(caja)+1;
             }else{
