@@ -45,6 +45,7 @@ public final class simulacion {
         return cajasRapidas.size();
     }
     
+    
     public ArrayList<cliente> createCliente(int cantidadClientes,int tiempoEntrada){
     Random rd = new Random();
     int articulosrd;
@@ -71,23 +72,16 @@ public final class simulacion {
     public void addCliente(ArrayList<cliente> clientesCreados) {
     for (cliente c1 : clientesCreados) {
         // Aquí, 'c1' representa un objeto de tipo 'cliente' en cada iteración
-        caja cajaMenosClientes = cajasNormales.get(0);
+        caja cajaNormalMenosClientes = getCajaNormalMenosClientes();
+        caja cajaRapidaMenosClientes =getCajaRapidaMenosClientes();
 
         if (c1.getCantidadArticulos() > 10) {
-            for (caja caja : cajasNormales) {
-                if (caja.getColaSize() < cajaMenosClientes.getColaSize() && !caja.isEstaCerrado()) {
-                    cajaMenosClientes = caja;
-                }
-            }
+            cajaNormalMenosClientes.agregarCliente(c1);
         } else {
-            for (caja caja : cajasRapidas) {
-                if (caja.getColaSize() < cajaMenosClientes.getColaSize() && !caja.isEstaCerrado()) {
-                    cajaMenosClientes = caja;
-                }
-            }
+            cajaRapidaMenosClientes.agregarCliente(c1);
         }
         cantidadClientes++;
-        cajaMenosClientes.agregarCliente(c1);
+        
     }
 }
 
@@ -117,7 +111,57 @@ public final class simulacion {
     public int getCantidadClientes() {
         return cantidadClientes;
     }
-
+    public caja getCajaNormalMenosClientes(){
+        caja cajaNormalMenosClientes = cajasNormales.get(0);
+        
+       
+        for(caja caja: cajasNormales){
+            if(caja.getColaSize()<cajaNormalMenosClientes.getColaSize()){
+                cajaNormalMenosClientes = caja;
+            }
+        }
+        return cajaNormalMenosClientes;
+    }
+    public caja getCajaRapidaMenosClientes(){
+        
+        caja cajaRapidaMenosClientes = cajasRapidas.get(0);
+        for(caja caja: cajasRapidas){
+            if(caja.getColaSize()<cajaRapidaMenosClientes.getColaSize()){
+                cajaRapidaMenosClientes = caja;
+            }
+        }
+        return cajaRapidaMenosClientes;
+    }
+    public void moverClientes(){
+        caja cajaNormalMenosClientes = cajasNormales.get(0);
+        caja cajaNormalMasClientes = cajasNormales.get(0);
+        caja cajaRapidaMenosClientes = cajasRapidas.get(0);
+        caja cajaRapidaMasClientes = cajasRapidas.get(0);
+        for(caja caja: cajasNormales){
+            if(caja.getColaSize()<cajaNormalMenosClientes.getColaSize()){
+                cajaNormalMenosClientes = caja;
+            }else if(caja.getColaSize()>cajaNormalMasClientes.getColaSize()){
+                cajaNormalMasClientes=caja;
+            }
+        }
+        for(caja caja: cajasRapidas){
+            if(caja.getColaSize()<cajaRapidaMenosClientes.getColaSize()){
+                cajaRapidaMenosClientes = caja;
+            }else if(caja.getColaSize()>cajaRapidaMasClientes.getColaSize()){
+                cajaRapidaMasClientes=caja;
+            }
+        }
+        
+        while(cajaNormalMasClientes.getColaSize()>5){
+            cliente clienteMovido = cajaNormalMasClientes.getCliente();
+            cajaNormalMenosClientes.agregarCliente(clienteMovido);
+        }
+        while(cajaRapidaMasClientes.getColaSize()>5){
+            cliente clienteMovido = cajaRapidaMasClientes.getCliente();
+            cajaRapidaMenosClientes.agregarCliente(clienteMovido);
+        }
+    }
+    
     public String getCajasRapidasAbiertas() {
          StringBuilder str = new StringBuilder();
         for(int k=0;k<cajasRapidas.size();k++){
@@ -128,7 +172,9 @@ public final class simulacion {
         
         return str.toString();
     }
-    
+    /*
+    ... ... ...
+    */
     public void abrirCajas(){
         
         boolean cajasRapidasLlenas=false;
@@ -156,7 +202,7 @@ public final class simulacion {
     public void cerrarCajas(int tiempoSimulado){
     boolean primeraCajaNormal = true;
     boolean primeraCajaRapida = true;
-    
+    moverClientes();
     // Cierra cajas normales
     Iterator<caja> iterator = cajasNormales.iterator();
     while (iterator.hasNext()) {

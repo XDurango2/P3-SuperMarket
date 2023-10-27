@@ -1370,14 +1370,7 @@ public class UI2 extends javax.swing.JFrame {
         
     }
     
-    public void ejecutar(simulacion s1,int contador){
-        Clock(contador);
-        setS1(s1);
-        showCajasNormales();
-        showCajasRapidas();
-        showQueueCR(s1.getCajasRapidas());
-        showQueueCN(s1.getCajasNormales());
-    }
+    
 
     public boolean isHasStarted() {
         return hasStarted;
@@ -1396,10 +1389,10 @@ public class UI2 extends javax.swing.JFrame {
             
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { 
+                // este genera las acciones de la simulacion dentro del limite impuesto por el usuario
                 contador++;
                 Clock(contador);
-                //ejecutarSimulacion(contador);
                 System.out.println("Han pasado " + contador + " minutos simulados.");
                 s1.addCliente(s1.createCliente(rd.nextInt(5+1),contador));
                 System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
@@ -1413,14 +1406,13 @@ public class UI2 extends javax.swing.JFrame {
                 showCajasRapidas();
                 showQueueCR(s1.getCajasRapidas());
                 showQueueCN(s1.getCajasNormales());
-                
                    
-                    if (contador % 10 == 0) {
-                    // Realizar la acción que deseas cada 5 minutos
+                    if (contador % 10 == 0) { // en ca
+                    // Realizar la acción que se desea cada 10 minutos
                     s1.cerrarCajas(contador);    
                     }
                     
-                if(contador==time){
+                if(contador==time){ // cuando se llegue al limite
                     timer.stop();
                     resultsPopUp(s1.getCantidadClientes(),s1.getCajaMasUsadas());
                     
@@ -1433,7 +1425,7 @@ public class UI2 extends javax.swing.JFrame {
     public int getContador(){
         return contador;
     }
-    public void Clock(int contador){
+    public void Clock(int contador){ // este actualiza el label del reloj dentro de la interfaz grafica
          int horas = (contador / 60) % 12;
         if (horas == 0) horas = 12;
         int minutos = contador % 60;
@@ -1443,7 +1435,7 @@ public class UI2 extends javax.swing.JFrame {
     }
     
    
-    public void showCajasRapidas(){
+    public void showCajasRapidas(){ // esto muestra las cajas rapidas abiertas y cerradas
         int cantidadRapidas=s1.cantidadCajasRapidas();
         switch(cantidadRapidas){
             case 1:
@@ -1468,7 +1460,7 @@ public class UI2 extends javax.swing.JFrame {
         }
     }
     
-    public void showCajasNormales(){
+    public void showCajasNormales(){ // esto muestra las cajas normales abiertas y cerradas
             int cantidadCajasNormales = s1.cantidadCajasNormales();
 
         JLabel[] cajasRapidas = {CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9, CN10};
@@ -1485,7 +1477,7 @@ public class UI2 extends javax.swing.JFrame {
         }
     }
 
-   public void hideCRLabels() {
+   public void hideCRLabels() { // esto oculta los todos los labels de los clientes de todas las cajas rapidas 
     JLabel[][] CRLabels = {
         {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5},
         {CR2P1, CR2P2, CR2P3, CR2P4, CR2P5},
@@ -1500,7 +1492,8 @@ public class UI2 extends javax.swing.JFrame {
 }
 
     
-  public void showQueueCR(ArrayList<caja> cajasRapidas) {
+  public void showQueueCR(ArrayList<caja> cajasRapidas) { 
+// esto muestra los labels de los clientes de todas las cajas rapidas dependiendo de los clientes en la cola de cada caja
     hideCRLabels();
     ArrayList<caja> CR = s1.getCajasRapidas();
     JLabel[] CR1 = {CR1P1, CR1P2, CR1P3, CR1P4, CR1P5};
@@ -1542,7 +1535,7 @@ public class UI2 extends javax.swing.JFrame {
     }
    
 }
-  public void hideAllLabelsCN() {
+  public void hideAllLabelsCN() { // esto oculta los todos los labels de los clientes de todas las cajas normales 
     JLabel[][] CNLabels = {
         {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5, CN1P6},
         {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5, CN2P6},
@@ -1564,6 +1557,8 @@ public class UI2 extends javax.swing.JFrame {
 }
 
   public void showQueueCN(ArrayList<caja> cajasNormales){
+      // esto muestra los labels de los clientes de todas las cajas normales dependiendo de los clientes en la cola de cada caja
+
        ArrayList<caja> CN = s1.getCajasNormales();
        hideAllLabelsCN();
        JLabel[] CN1 = {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5,CN1P6};
@@ -1616,6 +1611,7 @@ public class UI2 extends javax.swing.JFrame {
   }
   }
   public void resultsPopUp(int CantidadClientes, int[] numeros){
+        // este genera el Popup con los resultados de la simulacion
         StringBuilder str = new StringBuilder();
         str.append("cantidad de clientes atendidos:"+cantidadClientes);
         str.append("\n");
