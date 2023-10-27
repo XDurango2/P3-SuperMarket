@@ -3,17 +3,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.uabc.labs.p3;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 /**
  *
- * @author us
+ * @author Hector Duran
  */
 public class caja {
-    boolean estaCerrado;
-    boolean esCajaRapida;
-    int cantidadClientesAtendidos=0; 
+    private boolean estaCerrado;
+    private boolean esCajaRapida;
+    private int cantidadClientesAtendidos=0; 
     Queue<cliente> cola;
     
     
@@ -37,9 +36,9 @@ public class caja {
     }
     public void atender(int tiempoSimulacion){
         if(!cola.isEmpty()){
-            cliente c1 = cola.peek();
+            cliente c1 = cola.peek(); // se obtiene el cliente a atender
             int tiempoTotal=c1.getCantidadTiempo()+c1.getTiempoEntrada();
-            if(tiempoSimulacion>tiempoTotal){
+            if(tiempoSimulacion>tiempoTotal){ // se determina si es tiempo de atenderlo
                 System.out.println("cliente Atendido");
                 cola.remove();
                 cantidadClientesAtendidos++;
@@ -76,18 +75,6 @@ public class caja {
         estaCerrado=false;
         
     }
-
-    public String contenidosCaja(){
-        cliente[] cl={} ;
-        StringBuilder str= new StringBuilder();
-        cl=cola.toArray(cl);
-        
-        for(int k=0;k<cola.size();k++){
-            cliente c1 = cl[k];
-            str.append(c1+"\n");
-        }
-        return str.toString();
-    }  
     
     @Override
     public String toString() {

@@ -254,7 +254,7 @@ public final class simulacion {
         numeros = new int[5];
         for(int k=0; k<cajasNormales.size();k++){
             caja caja=cajasNormales.get(k);
-            if(caja.cantidadClientesAtendidos<cajaMasUsada.cantidadClientesAtendidos){
+            if(caja.getCantidadClientesAtendidos()<cajaMasUsada.getCantidadClientesAtendidos()){
                 cajaMasUsada=caja;
                 numeroCajas=cajasNormales.indexOf(caja)+1;
             }else{
@@ -264,7 +264,7 @@ public final class simulacion {
         }
         for(int k=0;k<cajasRapidas.size();k++){
             caja caja=cajasRapidas.get(k);
-            if(caja.cantidadClientesAtendidos<cajaMasUsadaRapidas.cantidadClientesAtendidos){
+            if(caja.getCantidadClientesAtendidos()<cajaMasUsadaRapidas.getCantidadClientesAtendidos()){
                 cajaMasUsadaRapidas=caja;
                 numeroCajasRapidas=cajasRapidas.indexOf(caja)+1;
             }else{

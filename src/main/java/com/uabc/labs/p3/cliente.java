@@ -6,7 +6,7 @@ package com.uabc.labs.p3;
 
 /**
  *
- * @author us
+ * @author Hector Duran
  */
 public class cliente {
     private final int cantidadArticulos;
