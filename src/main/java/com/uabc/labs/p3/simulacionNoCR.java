@@ -10,22 +10,21 @@ import java.util.Random;
  *
  * @author Hector Duran
  */
-public final class simulacion {
+public final class simulacionNoCR {
 
     
     private final ArrayList<caja> cajasNormales;
-    private final ArrayList<caja> cajasRapidas;
     private int cajasNormalesAbiertas=0;
-    private int cajasRapidasAbiertas=0;
     private int cantidadClientes=0;
     
 
-    public simulacion( ) {
+    public simulacionNoCR( ) {
      this.cajasNormales=new ArrayList<>();
-     this.cajasRapidas=new ArrayList<>();
+    
      
-         crearCajasNormales();
-        crearCajasRapidas();
+        crearCajasNormales();
+     
+         
       
     }
     public void crearCajasNormales(){
@@ -33,17 +32,11 @@ public final class simulacion {
         cajasNormales.add(c1);
       
     }
-     public void crearCajasRapidas(){
-                 
-        caja c1 = new caja(false,true);
-        cajasRapidas.add(c1);
-    }
+   
     public int cantidadCajasNormales(){
         return cajasNormales.size();
     } 
-    public int cantidadCajasRapidas(){
-        return cajasRapidas.size();
-    }
+   
     
     
     public ArrayList<cliente> createCliente(int cantidadClientes,int tiempoEntrada){
@@ -72,14 +65,10 @@ public final class simulacion {
     public void addCliente(ArrayList<cliente> clientesCreados) {
     for (cliente c1 : clientesCreados) {
         // Aquí, 'c1' representa un objeto de tipo 'cliente' en cada iteración
-        caja cajaNormalMenosClientes = getCajaNormalMenosClientes();
-        caja cajaRapidaMenosClientes =getCajaRapidaMenosClientes();
-        
-        if (c1.getCantidadArticulos() > 10) {
+        caja cajaNormalMenosClientes = getCajaNormalMenosClientes(); 
+       
             cajaNormalMenosClientes.agregarCliente(c1);
-        } else {
-            cajaRapidaMenosClientes.agregarCliente(c1);
-        }
+        
         cantidadClientes++;
         
     }
@@ -91,9 +80,7 @@ public final class simulacion {
         return cajasNormales;
     }
 
-    public ArrayList<caja> getCajasRapidas() {
-        return cajasRapidas;
-    }
+   
 
     public String getCajasNormalesAbiertas() {
          StringBuilder str = new StringBuilder();
@@ -122,21 +109,11 @@ public final class simulacion {
         }
         return cajaNormalMenosClientes;
     }
-    public caja getCajaRapidaMenosClientes(){
-        
-        caja cajaRapidaMenosClientes = cajasRapidas.get(0);
-        for(caja caja: cajasRapidas){
-            if(caja.getColaSize()<cajaRapidaMenosClientes.getColaSize()){
-                cajaRapidaMenosClientes = caja;
-            }
-        }
-        return cajaRapidaMenosClientes;
-    }
+    
     public void moverClientes(){
         caja cajaNormalMenosClientes = cajasNormales.get(0);
         caja cajaNormalMasClientes = cajasNormales.get(0);
-        caja cajaRapidaMenosClientes = cajasRapidas.get(0);
-        caja cajaRapidaMasClientes = cajasRapidas.get(0);
+        
         for(caja caja: cajasNormales){
             if(caja.getColaSize()<cajaNormalMenosClientes.getColaSize()){
                 cajaNormalMenosClientes = caja;
@@ -144,40 +121,21 @@ public final class simulacion {
                 cajaNormalMasClientes=caja;
             }
         }
-        for(caja caja: cajasRapidas){
-            if(caja.getColaSize()<cajaRapidaMenosClientes.getColaSize()){
-                cajaRapidaMenosClientes = caja;
-            }else if(caja.getColaSize()>cajaRapidaMasClientes.getColaSize()){
-                cajaRapidaMasClientes=caja;
-            }
-        }
+        
         
         while(cajaNormalMasClientes.getColaSize()>5&& cajaNormalMenosClientes.getColaSize()<5){
             cliente clienteMovido = cajaNormalMasClientes.getCliente();
             cajaNormalMenosClientes.agregarCliente(clienteMovido);
         }
-        while(cajaRapidaMasClientes.getColaSize()>5&& cajaRapidaMenosClientes.getColaSize()<5){
-            cliente clienteMovido = cajaRapidaMasClientes.getCliente();
-            cajaRapidaMenosClientes.agregarCliente(clienteMovido);
-        }
+        
     }
     
-    public String getCajasRapidasAbiertas() {
-         StringBuilder str = new StringBuilder();
-        for(int k=0;k<cajasRapidas.size();k++){
-           if(!cajasRapidas.get(k).isEstaCerrado()){
-               str.append(cajasRapidas.get(k).toString());
-            } 
-        }
-        
-        return str.toString();
-    }
+    
     /*
     ... ... ...
     */
     public void abrirCajas(){
         
-        boolean cajasRapidasLlenas=false;
         boolean cajasNormalesLlenas=false;       
             for (caja caja : cajasNormales) {
                 if (!caja.isEstaCerrado()&& caja.getColaSize()>5) {
@@ -185,23 +143,16 @@ public final class simulacion {
                 }
         }
         
-            for (caja caja : cajasRapidas) {
-                if (!caja.isEstaCerrado()&& caja.getColaSize()>5) {
-                    cajasRapidasLlenas = true;
-                }
-        }
+            
         if(cajasNormalesLlenas&&cajasNormales.size()<10){
             crearCajasNormales();
         }
-        if(cajasRapidasLlenas&&cajasRapidas.size()<3){
-            crearCajasRapidas();
-        }    
+          
         
     }
     
     public void cerrarCajas(int tiempoSimulado){
     boolean primeraCajaNormal = true;
-    boolean primeraCajaRapida = true;
     moverClientes();
     // Cierra cajas normales
     Iterator<caja> iterator = cajasNormales.iterator();
@@ -221,22 +172,7 @@ public final class simulacion {
         }
     }
     
-    // Cierra cajas rápidas
-    iterator = cajasRapidas.iterator();
-    while (iterator.hasNext()) {
-        caja caja = iterator.next();
-        if (!caja.isEstaCerrado() && primeraCajaRapida) {
-            primeraCajaRapida = false;
-        } else {
-            caja.cerrarCaja();
-            cajasRapidasAbiertas--;
-            if(caja.cola.isEmpty()){
-            iterator.remove(); // Usa el iterador para eliminar de manera segura
-            
-            }
-            }
-    }
-    
+   
 }
 
     public void atenderCajas(int tiempoSimulacion){
@@ -246,19 +182,13 @@ public final class simulacion {
                 }
         }
         
-            for (caja caja : cajasRapidas) {
-                if (!caja.cola.isEmpty()) {
-                    caja.atender(tiempoSimulacion);
-                }
-        }
+           
             abrirCajas();
         }
    
     public int[] getCajaMasUsadas(){
         caja cajaMasUsada=cajasNormales.get(0);
-        caja cajaMasUsadaRapidas=cajasRapidas.get(0);
         int numeroCajas=1;
-        int numeroCajasRapidas=1;
         int[] numeros;
         numeros = new int[5];
         for(int k=0; k<cajasNormales.size();k++){
@@ -271,17 +201,7 @@ public final class simulacion {
             }
             numeros[0] = numeroCajas;
         }
-        for(int k=0;k<cajasRapidas.size();k++){
-            caja caja=cajasRapidas.get(k);
-            if(caja.getCantidadClientesAtendidos()>cajaMasUsadaRapidas.getCantidadClientesAtendidos()){
-                cajaMasUsadaRapidas=caja;
-                numeroCajasRapidas=cajasRapidas.indexOf(caja)+1;
-            }else{
-                numeroCajasRapidas=cajasRapidas.indexOf(caja)+1;
-
-            }
-            numeros[1]=numeroCajasRapidas;
-        }
+        
         
             return numeros;
         }
@@ -292,13 +212,7 @@ public final class simulacion {
         }
         return sumaPromedioTiempoCajasNormales/cajasNormales.size();
     }
-    public double getPromedioTiempoCajasRapidas(){
-        double sumaPromedioTiempoCajasRapidas=0;
-        for(caja cajaRapida:cajasRapidas){
-            sumaPromedioTiempoCajasRapidas+=cajaRapida.calcularPromedioTiempo();
-        }
-        return sumaPromedioTiempoCajasRapidas/cajasRapidas.size();
-    }
+   
          
     }
 

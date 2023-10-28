@@ -29,10 +29,11 @@ public class UI2 extends javax.swing.JFrame {
     private BufferedImage resized;
     private Timer timer;
     private simulacion s1;
-    //private int contador;
+    private simulacionNoCR sn1;
     public boolean hasStarted=false;
      private Random rd;
      private int cantidadClientes;
+     private boolean noCR=false;
 
     /**
      * Creates new form UI2
@@ -40,9 +41,8 @@ public class UI2 extends javax.swing.JFrame {
      */
     public UI2() {
         initComponents();
-        //this.contador=0;
         this.rd=new Random();
-        this.s1=new simulacion();
+        this.s1 = new simulacion();
     }
     public void setS1(simulacion s1){
         this.s1=s1;
@@ -169,12 +169,12 @@ public class UI2 extends javax.swing.JFrame {
         CN10P4 = new javax.swing.JLabel();
         CN10P5 = new javax.swing.JLabel();
         CN10P6 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Cajas Rapidas:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1339,6 +1339,14 @@ public class UI2 extends javax.swing.JFrame {
         getContentPane().add(CN10P6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 100, 100));
         CN10P6.setVisible(false);
 
+        jCheckBox1.setText("No incluir cajas rapidas");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1346,30 +1354,7 @@ public class UI2 extends javax.swing.JFrame {
         String timeString = (String)timeTextField.getText();
         this.time = Integer.parseInt(timeString);
     }//GEN-LAST:event_timeTextFieldActionPerformed
-    public void ejecutarSimulacion(int tiempoSimulado) {
-        int tiemposimulado = tiempoSimulado;
-        Random rd = new Random();        
-        System.out.println("tiempo simulado:"+tiempoSimulado);
-        s1.addCliente(s1.createCliente(rd.nextInt(5+1),tiemposimulado));
-        System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
-        System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
-        System.out.println("cajas Rapidas:"+s1.getCajasRapidasAbiertas());
-        System.out.println("cantidad de cajas normales:"+s1.cantidadCajasNormales());
-        System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
-        s1.atenderCajas(tiempoSimulado);
-        s1.getCantidadClientes();
-        if(tiemposimulado%10==0){
-                    s1.cerrarCajas(tiempoSimulado);
-                    
-        }
-        showCajasNormales();
-        showCajasRapidas();
-        showQueueCR(s1.getCajasRapidas());
-        showQueueCN(s1.getCajasNormales());
-        
-        
-    }
-    
+       
     
 
     public boolean isHasStarted() {
@@ -1380,6 +1365,11 @@ public class UI2 extends javax.swing.JFrame {
         
     clockMain();         
     }//GEN-LAST:event_StartButtonActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+       this.noCR=true;
+       this.sn1 = new simulacionNoCR();
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
     public int getTime(){
         return time;
     }
@@ -1392,9 +1382,46 @@ public class UI2 extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent e) { 
                 // este genera las acciones de la simulacion dentro del limite impuesto por el usuario
                 contador++;
-                Clock(contador);
+               if(noCR){
+                   ejecutarNoCR(contador);
+               }else{
+                   ejecutar(contador);
+               }
+                    
+                if(contador==time){ // cuando se llegue al limite
+                    timer.stop();
+                    if(noCR){
+                    resultsPopUp(sn1.getCantidadClientes(),sn1.getCajaMasUsadas(),sn1.getPromedioTiempoCajasNormales());
+                    }else{
+                       resultsPopUpCR(s1.getCantidadClientes(),s1.getCajaMasUsadas(),s1.getPromedioTiempoCajasNormales(),s1.getPromedioTiempoCajasRapidas()); 
+                    }
+                    
+                }
+            }
+        });
+        timer.start();
+    }
+    public void ejecutarNoCR(int contador){
+         Clock(contador);
                 System.out.println("Han pasado " + contador + " minutos simulados.");
-                s1.addCliente(s1.createCliente(rd.nextInt(5+1),contador));
+                sn1.addCliente(sn1.createCliente(rd.nextInt(10+1),contador));
+                System.out.println("cantidad de clientes:"+sn1.getCantidadClientes());
+                System.out.println("cajas normales:"+sn1.getCajasNormalesAbiertas());
+                System.out.println("cantidad de cajas normales:"+sn1.cantidadCajasNormales());
+                sn1.atenderCajas(contador);
+                cantidadClientes=sn1.getCantidadClientes();
+                showCajasNormales(sn1.cantidadCajasNormales());
+                showQueueCN(sn1.getCajasNormales());
+                   
+                    if (contador % 10 == 0) { // en ca
+                    // Realizar la acción que se desea cada 10 minutos
+                    sn1.cerrarCajas(contador);    
+                    }
+    }
+    public void ejecutar(int contador){
+         Clock(contador);
+                System.out.println("Han pasado " + contador + " minutos simulados.");
+                s1.addCliente(s1.createCliente(rd.nextInt(10+1),contador));
                 System.out.println("cantidad de clientes:"+s1.getCantidadClientes());
                 System.out.println("cajas normales:"+s1.getCajasNormalesAbiertas());
                 System.out.println("cajas Rapidas:"+s1.getCajasRapidasAbiertas());
@@ -1402,25 +1429,15 @@ public class UI2 extends javax.swing.JFrame {
                 System.out.println("cantidad de cajas rapidas:"+s1.cantidadCajasRapidas());
                 s1.atenderCajas(contador);
                 cantidadClientes=s1.getCantidadClientes();
-                showCajasNormales();
+                showCajasNormales(s1.cantidadCajasNormales());
                 showCajasRapidas();
                 showQueueCR(s1.getCajasRapidas());
                 showQueueCN(s1.getCajasNormales());
                    
-                    if (contador % 10 == 0) { // en ca
+                    if (contador % 10 == 0) {
                     // Realizar la acción que se desea cada 10 minutos
                     s1.cerrarCajas(contador);    
                     }
-                    
-                if(contador==time){ // cuando se llegue al limite
-                    timer.stop();
-                    resultsPopUp(s1.getCantidadClientes(),s1.getCajaMasUsadas());
-                    
-                    
-                }
-            }
-        });
-        timer.start();
     }
     public int getContador(){
         return contador;
@@ -1460,8 +1477,7 @@ public class UI2 extends javax.swing.JFrame {
         }
     }
     
-    public void showCajasNormales(){ // esto muestra las cajas normales abiertas y cerradas
-            int cantidadCajasNormales = s1.cantidadCajasNormales();
+    public void showCajasNormales(int cantidadCajasNormales){ // esto muestra las cajas normales abiertas y cerradas
 
         JLabel[] cajasRapidas = {CN1, CN2, CN3, CN4, CN5, CN6, CN7, CN8, CN9, CN10};
         int totalCajas = cajasRapidas.length;
@@ -1559,7 +1575,7 @@ public class UI2 extends javax.swing.JFrame {
   public void showQueueCN(ArrayList<caja> cajasNormales){
       // esto muestra los labels de los clientes de todas las cajas normales dependiendo de los clientes en la cola de cada caja
 
-       ArrayList<caja> CN = s1.getCajasNormales();
+       ArrayList<caja> CN = cajasNormales;
        hideAllLabelsCN();
        JLabel[] CN1 = {CN1P1, CN1P2, CN1P3, CN1P4, CN1P5,CN1P6};
        JLabel[] CN2 = {CN2P1, CN2P2, CN2P3, CN2P4, CN2P5,CN2P6};
@@ -1610,14 +1626,26 @@ public class UI2 extends javax.swing.JFrame {
            
   }
   }
-  public void resultsPopUp(int CantidadClientes, int[] numeros){
+  public void resultsPopUp(int CantidadClientes, int[] numeros, double getPromedioTiempoCajasNormales){
         // este genera el Popup con los resultados de la simulacion
         StringBuilder str = new StringBuilder();
         str.append("cantidad de clientes atendidos:"+cantidadClientes);
         str.append("\n");
-        str.append("Caja normal mas usada:"+numeros[0]);
+        str.append("Caja normal mas usada: "+numeros[0]);
+        //str.append("\n");
+        //str.append(String.format("promedio de espera: \n caja Normal: %.2f", getPromedioTiempoCajasNormales));
+        JOptionPane.showMessageDialog(null,str);
+    }
+  public void resultsPopUpCR(int CantidadClientes, int[] numeros, double getPromedioTiempoCajasNormales, double getPromedioTiempoCajasRapidas){
+        // este genera el Popup con los resultados de la simulacion
+        StringBuilder str = new StringBuilder();
+        str.append("cantidad de clientes atendidos:"+cantidadClientes);
         str.append("\n");
-        str.append("caja rapida mas usada"+numeros[1]);
+        str.append("Caja normal mas usada: "+numeros[0]);
+        str.append("\n");
+        str.append("caja rapida mas usada: "+numeros[1]);
+        //str.append("\n");
+        //str.append(String.format("promedio de espera: \n caja Normal: %.2f \n caja Rapida: %.2f", getPromedioTiempoCajasNormales,getPromedioTiempoCajasRapidas));
         JOptionPane.showMessageDialog(null,str);
     }
 
@@ -1721,6 +1749,7 @@ public class UI2 extends javax.swing.JFrame {
     private javax.swing.JLabel CR3P4;
     private javax.swing.JLabel CR3P5;
     private javax.swing.JButton StartButton;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;

@@ -13,6 +13,7 @@ public class caja {
     private boolean estaCerrado;
     private boolean esCajaRapida;
     private int cantidadClientesAtendidos=0; 
+    private int sumaTiempoClientes=0;
     Queue<cliente> cola;
     
     
@@ -31,6 +32,8 @@ public class caja {
     public void agregarCliente(cliente c1){
          if(!estaCerrado){
               cola.add(c1);
+            int tiempoTotal=c1.getCantidadTiempo()+c1.getTiempoEntrada();
+              this.sumaTiempoClientes+=tiempoTotal;
          } 
         
     }
@@ -74,6 +77,14 @@ public class caja {
     public void abrirCaja(){
         estaCerrado=false;
         
+    }
+    public double calcularPromedioTiempo(){
+        double promedioTiempo=sumaTiempoClientes/cantidadClientesAtendidos;
+        if(promedioTiempo==0){
+            return 0;
+        }else{
+        return promedioTiempo;
+        }
     }
     
     @Override
