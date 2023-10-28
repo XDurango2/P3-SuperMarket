@@ -205,6 +205,7 @@ public final class simulacionNoCR {
         
             return numeros;
         }
+    /*
     public double getPromedioTiempoCajasNormales(){
         double sumaPromedioTiempoCajasNormales=0;
         for(caja cajaNormal:cajasNormales){
@@ -212,7 +213,7 @@ public final class simulacionNoCR {
         }
         return sumaPromedioTiempoCajasNormales/cajasNormales.size();
     }
-   
+   */
          
     }
 

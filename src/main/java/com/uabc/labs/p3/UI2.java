@@ -1391,9 +1391,9 @@ public class UI2 extends javax.swing.JFrame {
                 if(contador==time){ // cuando se llegue al limite
                     timer.stop();
                     if(noCR){
-                    resultsPopUp(sn1.getCantidadClientes(),sn1.getCajaMasUsadas(),sn1.getPromedioTiempoCajasNormales());
+                    resultsPopUp(sn1.getCantidadClientes(),sn1.getCajaMasUsadas());
                     }else{
-                       resultsPopUpCR(s1.getCantidadClientes(),s1.getCajaMasUsadas(),s1.getPromedioTiempoCajasNormales(),s1.getPromedioTiempoCajasRapidas()); 
+                       resultsPopUpCR(s1.getCantidadClientes(),s1.getCajaMasUsadas()); 
                     }
                     
                 }
@@ -1626,7 +1626,7 @@ public class UI2 extends javax.swing.JFrame {
            
   }
   }
-  public void resultsPopUp(int CantidadClientes, int[] numeros, double getPromedioTiempoCajasNormales){
+  public void resultsPopUp(int CantidadClientes, int[] numeros){
         // este genera el Popup con los resultados de la simulacion
         StringBuilder str = new StringBuilder();
         str.append("cantidad de clientes atendidos:"+cantidadClientes);
@@ -1636,7 +1636,7 @@ public class UI2 extends javax.swing.JFrame {
         //str.append(String.format("promedio de espera: \n caja Normal: %.2f", getPromedioTiempoCajasNormales));
         JOptionPane.showMessageDialog(null,str);
     }
-  public void resultsPopUpCR(int CantidadClientes, int[] numeros, double getPromedioTiempoCajasNormales, double getPromedioTiempoCajasRapidas){
+  public void resultsPopUpCR(int CantidadClientes, int[] numeros){
         // este genera el Popup con los resultados de la simulacion
         StringBuilder str = new StringBuilder();
         str.append("cantidad de clientes atendidos:"+cantidadClientes);

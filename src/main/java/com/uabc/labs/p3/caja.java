@@ -78,7 +78,7 @@ public class caja {
         estaCerrado=false;
         
     }
-    public double calcularPromedioTiempo(){
+    /*public double calcularPromedioTiempo(){
         double promedioTiempo=sumaTiempoClientes/cantidadClientesAtendidos;
         if(promedioTiempo==0){
             return 0;
@@ -86,7 +86,7 @@ public class caja {
         return promedioTiempo;
         }
     }
-    
+    */
     @Override
     public String toString() {
         return "caja{" + "estaCerrado=" + estaCerrado + ", esCajaRapida=" + esCajaRapida + ", cola=" + cola+ '}';
