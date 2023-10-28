@@ -44,10 +44,7 @@ public class UI2 extends javax.swing.JFrame {
         this.rd=new Random();
         this.s1 = new simulacion();
     }
-    public void setS1(simulacion s1){
-        this.s1=s1;
-    }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -169,7 +166,7 @@ public class UI2 extends javax.swing.JFrame {
         CN10P4 = new javax.swing.JLabel();
         CN10P5 = new javax.swing.JLabel();
         CN10P6 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        noCRCheckBox = new javax.swing.JCheckBox();
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel14.setText("Cajas Rapidas:");
@@ -1339,13 +1336,13 @@ public class UI2 extends javax.swing.JFrame {
         getContentPane().add(CN10P6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 470, 100, 100));
         CN10P6.setVisible(false);
 
-        jCheckBox1.setText("No incluir cajas rapidas");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        noCRCheckBox.setText("No incluir cajas rapidas");
+        noCRCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                noCRCheckBoxActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
+        getContentPane().add(noCRCheckBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 260, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1354,25 +1351,16 @@ public class UI2 extends javax.swing.JFrame {
         String timeString = (String)timeTextField.getText();
         this.time = Integer.parseInt(timeString);
     }//GEN-LAST:event_timeTextFieldActionPerformed
-       
-    
-
-    public boolean isHasStarted() {
-        return hasStarted;
-    }
-    
+           
     private void StartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartButtonActionPerformed
-        
-    clockMain();         
+        clockMain();         
     }//GEN-LAST:event_StartButtonActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void noCRCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCRCheckBoxActionPerformed
        this.noCR=true;
        this.sn1 = new simulacionNoCR();
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-    public int getTime(){
-        return time;
-    }
+    }//GEN-LAST:event_noCRCheckBoxActionPerformed
+    
     public void clockMain(){
         
         timer = new Timer(3000, new ActionListener() {
@@ -1401,7 +1389,7 @@ public class UI2 extends javax.swing.JFrame {
         });
         timer.start();
     }
-    public void ejecutarNoCR(int contador){
+    public void ejecutarNoCR(int contador){ // esto se ejecuta el codigo para tener solo cajas normales
          Clock(contador);
                 System.out.println("Han pasado " + contador + " minutos simulados.");
                 sn1.addCliente(sn1.createCliente(rd.nextInt(10+1),contador));
@@ -1749,7 +1737,6 @@ public class UI2 extends javax.swing.JFrame {
     private javax.swing.JLabel CR3P4;
     private javax.swing.JLabel CR3P5;
     private javax.swing.JButton StartButton;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;
@@ -1772,6 +1759,7 @@ public class UI2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelClock;
+    private javax.swing.JCheckBox noCRCheckBox;
     private javax.swing.JTextField timeTextField;
     // End of variables declaration//GEN-END:variables
 private static BufferedImage resize(BufferedImage image, int height, int width) {
